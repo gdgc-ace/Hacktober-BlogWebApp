@@ -7,7 +7,9 @@ import {
 import App from './App.tsx'
 import './index.css'
 import HomePage from './pages/HomePage.tsx';
-
+import BlogPage from './pages/BlogPage.tsx';
+import { ThemeProvider } from './components/theme-provider.tsx';
+import LoginPage from './pages/LoginPage.tsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
         path: "",
         element: <HomePage />,
       },
+      {
+        path: "/:id",
+        element: <BlogPage />
+      },
+      {
+        path: "/login",
+        element: <LoginPage />
+      }
     ],
 
   },
@@ -25,6 +35,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </StrictMode>,
 )

@@ -7,9 +7,9 @@ function App() {
   return (
     <>
       {/* <nav className='text-3xl font-bold underline'>Navbar</nav> */}
-      <Navbar/>
+      <Navbar />
       <Outlet />
-      <Footer/>
+      <Footer />
     </>
   )
 }

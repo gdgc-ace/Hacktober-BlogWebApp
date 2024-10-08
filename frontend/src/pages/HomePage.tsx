@@ -1,49 +1,61 @@
+import { Card, CardTitle } from "@/components/ui/card";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
+
+  const cards = [
+    {
+      title: "The Rise of AI in Everyday Life",
+      description: "An exploration of how artificial intelligence is revolutionizing industries from healthcare to education.",
+      author: "John Doe",
+      date: "October 5, 2024",
+      url: "/blog-1"
+    },
+    {
+      title: "JavaScript: The Future of Web Development",
+      description: "A comprehensive guide on how JavaScript continues to evolve, shaping the future of web development.",
+      author: "Jane Smith",
+      date: "September 25, 2024",
+      url: "/blog-2"
+
+    },
+    {
+      title: "Understanding Cloud Computing in 2024",
+      description: "This article breaks down the core components of cloud computing and why it's important for modern businesses.",
+      author: "Alex Johnson",
+      date: "October 2, 2024",
+      url: "/blog-3"
+    },
+    {
+      title: "Cybersecurity Trends You Need to Know",
+      description: "Discover the top cybersecurity trends and how businesses can safeguard their data in an increasingly digital world.",
+      author: "Emily Davis",
+      date: "October 3, 2024",
+      url: "/blog-4"
+    }
+  ];
+
+  useEffect(() => {
+
+  }, [])
+
   return (
     <header>
-      {/* Hero Container */}
-      <div className="mx-auto max-w-7xl px-5 py-16 md:px-10 md:pt-20">
-        {/* Component */}
-        <div className="mx-auto mb-8 w-full max-w-3xl text-center md:mb-12 lg:mb-16">
-          {/* Hero Title */}
-          <h1 className="mb-4 text-4xl font-bold md:text-7xl">
-            Simplify Meeting Scheduling
-          </h1>
-          <p className="mx-auto mb-5 max-w-lg text-sm text-gray-500 sm:text-xl md:mb-6 lg:mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
-            purus sit amet luctus venenatis, lectus
-          </p>
-          {/* Hero Button */}
-          <div className="flex items-stretch justify-center">
-            <a
-              href="#"
-              className="mr-5 inline-block rounded-md bg-black px-8 py-4 text-center font-semibold text-white md:mr-6 lg:mr-8"
-            >
-              Get Started
-            </a>
-            <a
-              href="#"
-              className="flex flex-row items-center justify-center rounded-md border border-solid border-black px-6 py-3 font-bold text-black"
-            >
-              <img
-                src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a944888e6cf97_PlayCircle%20(1).svg"
-                alt=""
-                className="mr-2 inline-block max-h-4 w-5"
-              />
-              <p className="text-sm text-black sm:text-base">Watch Demo</p>
-            </a>
-          </div>
-        </div>
-        {/* Hero Image */}
-      </div>
-      <div className="rounded-2xl p-3 md:mx-10 bg-gray-50">
-        <div className="rounded-2xl max-h-[512px] overflow-hidden">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
-            alt=""
-            className="inline-block w-full object-cover "
-          />
+      <div className="flex h-full px-20">
+        <div className="grid md:grid-cols-3 grid-cols-1 w-full mx-auto gap-10 p-10">
+          {cards.map((card) => (
+            <Link to={card.url}>
+              <Card className="flex flex-col gap-4 p-4">
+                <img src="https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?q=80&w=1904&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="object-cover" height={'200px'} />
+                <CardTitle className="font-bold">{card.title}</CardTitle>
+                <p className="text-gray-600 dark:text-gray-400">{card.description}</p>
+                <span>{card.date}</span>
+                <p>{card.author}</p>
+              </Card>
+            </Link>
+
+          ))}
         </div>
       </div>
     </header>
