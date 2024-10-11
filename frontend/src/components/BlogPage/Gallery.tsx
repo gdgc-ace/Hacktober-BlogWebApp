@@ -2,7 +2,7 @@
 const Gallery = () => {
   return (
     <>
-        <ul className="flex flex-wrap justify-evenly w-[70%] mx-[15%] mb-4 mt-16 text-semibold text-lg">
+        <ul className="flex flex-wrap justify-evenly w-[70%] mx-[15%] mb-4 mt-32 text-semibold text-lg">
             <li className="active"><a href="#" className="text-yellow-500 p-2">All</a></li>
             <li><a href="#" className="p-2">Branding Goals</a></li>
             <li><a href="#" className="p-2">Photography</a></li>
@@ -12,10 +12,10 @@ const Gallery = () => {
 
         <div className="flex flex-col items-center pt-8">
             <div className="flex flex-col md:flex-row mb-2">
-                <div className="md:w-1/2 mb-8">
+                <div className="mb-8">
                     <img src="/BlogPage/Gallery/2.jpg" alt="Web Design" className="w-full" />
                 </div>
-                <div className="flex flex-col md:pl-6">
+                <div className="flex flex-col md:pl-8">
                     <div className="mb-8 flex">
                         <img src="/BlogPage/Gallery/1.jpg" alt="Top Image" className="mr-8" />
                         <img src="/BlogPage/Gallery/5.jpg" alt="Top Right Image" />
@@ -27,13 +27,15 @@ const Gallery = () => {
                 </div>
             </div>
             
-            <div className="flex flex-col md:flex-row mb-4">
-                <div className="md:w-1/2 mb-8">
-                    <img src="/BlogPage/Gallery/9.jpg" alt="Photography" className="w-full" />
+            <div className="flex flex-col md:flex-row mb-2">
+                <div className="flex flex-col">
+                    <div className="mb-32 flex">
+                        <img src="/BlogPage/Gallery/1.jpg" alt="Top Image" className="mr-8" />
+                        <img src="/BlogPage/Gallery/5.jpg" alt="Top Right Image" />
+                    </div>
                 </div>
-                <div className="flex md:pl-6">
-                    <img src="/BlogPage/Gallery/3.jpg" alt="Perfection" className="mr-8" />
-                    <img src="/BlogPage/Gallery/7.jpg" alt="Bottom Right Image" />
+                <div className="pl-8">
+                    <img src="/BlogPage/Gallery/9.jpg" alt="Web Design" className="w-full" />
                 </div>
             </div>
         </div>
