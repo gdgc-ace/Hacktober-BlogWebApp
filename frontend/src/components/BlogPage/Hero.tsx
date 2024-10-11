@@ -3,7 +3,7 @@ const Hero = () => {
     <>
         <section className="relative h-[calc(85vh)]">
             <img
-                src="./src/assets/BlogPage/Hero.jpg"
+                src="/BlogPage/Hero.jpg"
                 alt="hero png"
                 className="absolute inset-0 w-full h-full object-fit"
             />
