@@ -1,27 +1,27 @@
 const Hero = () => {
   return (
     <>
-        <section className="relative h-[calc(85vh)]">
-            <img
-                src="/BlogPage/Hero.jpg"
-                alt="hero png"
-                className="absolute inset-0 w-full h-full object-fit"
-            />
+      <section className="relative bg-black h-[calc(100vh)]">
+        <img
+          src="/BlogPage/Hero.jpg"
+          alt="hero png"
+          className="absolute inset-0 w-full h-full object-fit opacity-20"
+        />
 
-            <div className="relative flex flex-col justify-center items-center h-full text-center">
-                <h1 className=" text-6xl sm:text-8xl md:text-8xl flex flex-col font-bold mb-4 text-primary p-5 text-[#FFFFFF]">
-                    <span className="inline">Stories from the</span>
-                    
-                    <div className="flex tracking-wide">
-                            <span className="text-green-600">G</span>
-                            <span className="text-red-600">D</span>
-                            <span className="text-yellow-600">G</span>
-                            <span className="text-blue-600">C</span>
-                            &nbsp;Community
-                    </div>
-                </h1>
+        <div className="relative flex flex-col justify-center items-center h-full text-center">
+          <h1 className=" text-6xl sm:text-8xl md:text-8xl flex flex-col  mb-4 uppercase  text-primary p-5 text-[#FFFFFF] tracking-wider">
+            <span className="inline font-['Anton'] tracking-wider">Stories from the</span>
+            <div className="flex justify-between font-['Anton']">
+              {/* <span className="text-green-500">G</span> */}
+              {/* <span className="text-red-500">D</span> */}
+              {/* <span className="text-yellow-300">G</span> */}
+              {/* <span className="text-blue-400">C</span> */}
+              <p className=" font-['Anton']  px-5 rounded-[50px]">GDSC</p>
+              &nbsp;Community
             </div>
-        </section>
+          </h1>
+        </div>
+      </section>
     </>
   )
 }

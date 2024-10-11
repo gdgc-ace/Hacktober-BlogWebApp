@@ -2,7 +2,7 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <div className="flex justify-evenly w-full p-2 border-b-2">
+        <div className="flex justify-evenly w-full p-10 fixed z-10 text-white">
           <div className="w-full text-left ml-16 p-1">
             <p className="text-4xl font-bold">GDGC</p>
           </div>
