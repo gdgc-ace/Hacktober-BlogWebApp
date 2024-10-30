@@ -74,4 +74,29 @@ const deleteBlog = async (req, res) => {
   }
 }
 
-module.exports = { getBlogs, getBlog, createBlog, updateBlog, deleteBlog }
+const searchBlogs = async (req, res) => {
+  const { query } = req.query
+  
+  if (!query) {
+    return res.status(400).json({ message: 'Search query is required' })
+  }
+
+  try {
+    const blogs = await Blog.find({
+      $or: [
+        { title: { $regex: query, $options: 'i' } },
+        { content: { $regex: query, $options: 'i' } } 
+      ]
+    })
+
+    if (blogs.length === 0) {
+      return res.status(404).json({ message: 'No blogs found' })
+    }
+
+    res.status(200).json(blogs)
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+}
+
+module.exports = { getBlogs, getBlog, createBlog, updateBlog, deleteBlog, searchBlogs}
