@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use("/", require("./routes/userRoutes.js"));
+app.use("/", require("./routes/blogRoutes.js"));
 app.use(errorHandler);
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
