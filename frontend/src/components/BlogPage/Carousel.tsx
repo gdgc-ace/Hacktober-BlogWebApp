@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import { Link, useLocation  } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import blogData from '../../data/BlogData';
 
 const Carousel = () => {
-  const location = useLocation(); 
+  const location = useLocation();
   const isBlogDetailsPage = location.pathname.includes("/blog/");
 
   const [currentPage, setCurrentPage] = useState(1);
   let itemsPerPage = 0;
-  if (isBlogDetailsPage){
+  if (isBlogDetailsPage) {
     itemsPerPage = 2;
   } else {
     itemsPerPage = 3;
