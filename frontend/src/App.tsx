@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import BlogPage from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails"; 
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
             <Route path="/" element={<BlogPage />} />
             <Route path="/blog/:id" element={<BlogDetails />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
           </Routes>
         </div>
       <Footer />
