@@ -1,47 +1,10 @@
 import { useState } from 'react';
-
-const blogData = [
-  {
-    id: 1,
-    title: "Blog Title 1",
-    image: "/BlogPage/Hero.jpg",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, perferendis saepe nulla blanditiis recusandae numquam facere ut rem.",
-  },
-  {
-    id: 2,
-    title: "Blog Title 2",
-    image: "/BlogPage/Hero.jpg",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, perferendis saepe nulla blanditiis recusandae numquam facere ut rem.",
-  },
-  {
-    id: 3,
-    title: "Blog Title 3",
-    image: "/BlogPage/Hero.jpg",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, perferendis saepe nulla blanditiis recusandae numquam facere ut rem.",
-  },
-  {
-    id: 4,
-    title: "Blog Title 4",
-    image: "/BlogPage/Hero.jpg",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, perferendis saepe nulla blanditiis recusandae numquam facere ut rem.",
-  },
-  {
-    id: 5,
-    title: "Blog Title 5",
-    image: "/BlogPage/placeholder.png",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, perferendis saepe nulla blanditiis recusandae numquam facere ut rem.",
-  },
-  {
-    id: 6,
-    title: "Blog Title 6",
-    image: "/BlogPage/placeholder.png",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, perferendis saepe nulla blanditiis recusandae numquam facere ut rem.",
-  },
-];
+import { Link } from 'react-router-dom';
+import blogData from '../../data/BlogData';
 
 const Carousel = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3; 
+  const itemsPerPage = 3;
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -75,7 +38,9 @@ const Carousel = () => {
             <p className="ml-6 mt-4 mb-2 text-lg font-bold">{blog.title}</p>
             <p className="ml-4 border w-[80%] border-black rounded-md"></p>
             <p className="ml-6 my-4 w-[75%] text-md text-gray-600">{blog.description}</p>
-            <a href="#" className="ml-6 underline text-md text-blue-600">Read More</a>
+            <Link to={`/blog/${blog.id}`} className="ml-6 underline text-md text-blue-600">
+              Read More
+            </Link>
           </div>
         ))}
       </div>
