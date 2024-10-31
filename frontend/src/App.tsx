@@ -1,23 +1,23 @@
-import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import BlogPage from "./pages/Blog"
-
+import BlogPage from "./pages/Blog";
+import BlogDetails from "./pages/BlogDetails"; 
 function App() {
-
   return (
     <>
-      <Navbar />
       <Router>
+      <Navbar />
         <div className="App">
           <Routes>
-            <Route path="/" element={<BlogPage />} /> 
+            <Route path="/" element={<BlogPage />} />
+            <Route path="/blog/:id" element={<BlogDetails />} />
           </Routes>
         </div>
-      </Router>
       <Footer />
+      </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
