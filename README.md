@@ -10,9 +10,9 @@ How to run this project ?
     3. Run the application - ``` npm run dev```
 
 - For backend : 
-    1. ``` cd backend ```
-    2. ``` npm install ```
-    3. ``` node server.js``` 
+    1. Change the directory to 'backend' - ``` cd backend ```
+    2. Install the dependencies - ``` npm install ```
+    3. Run the server - ``` node server.js``` 
 
 ## 🤝 Contributing
 
