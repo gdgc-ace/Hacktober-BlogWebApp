@@ -20,7 +20,7 @@ const Navbar = () => {
                 <a href="">Blog</a>
             </li>
             <li className="bg-[#FEBB00] px-8 py-1 rounded-md text-white">
-                <a href="">JOIN</a>
+                <Link to="/login">JOIN</Link>
             </li>
           </div>
         </div>
