@@ -99,4 +99,20 @@ const searchBlogs = async (req, res) => {
   }
 }
 
-module.exports = { getBlogs, getBlog, createBlog, updateBlog, deleteBlog, searchBlogs}
+const getBlogsByCategory = async (req, res) => {
+  const { category } = req.params
+  
+  try {
+    const blogs = await Blog.find({ category })
+    
+    if (blogs.length === 0) {
+      return res.status(404).json({ message: 'No blogs found in this category' })
+    }
+
+    res.status(200).json(blogs)
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+}
+
+module.exports = { getBlogs, getBlog, createBlog, updateBlog, deleteBlog, searchBlogs, getBlogsByCategory}

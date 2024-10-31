@@ -17,11 +17,11 @@ const blogSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    // category: {
-    //     type: String,
-    //     enum: ['Tech', 'Cultural', 'Hackathon', 'Seminar'],
-    //     required: true
-    // },
+    category: {
+        type: String,
+        enum: ['Tech', 'Cultural', 'Hackathon', 'Seminar'],
+        required: true
+    },
     tags: [{
         type: String
     }],
