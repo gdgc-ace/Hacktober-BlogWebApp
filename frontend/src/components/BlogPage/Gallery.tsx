@@ -11,7 +11,6 @@ const galleryData = [
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
-
   const categories = ['All', 'Branding Goals', 'Photography', 'True Perfection', 'Web Design'];
 
   return (
