@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BlogPage from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails"; 
-import About from "./components/AboutPage/About";
+import About from "./pages/About";
 function App() {
   return (
     <>
