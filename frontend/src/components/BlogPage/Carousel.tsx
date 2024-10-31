@@ -1,10 +1,18 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation  } from 'react-router-dom';
 import blogData from '../../data/BlogData';
 
 const Carousel = () => {
+  const location = useLocation(); 
+  const isBlogDetailsPage = location.pathname.includes("/blog/");
+
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3;
+  let itemsPerPage = 0;
+  if (isBlogDetailsPage){
+    itemsPerPage = 2;
+  } else {
+    itemsPerPage = 3;
+  }
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -24,8 +32,10 @@ const Carousel = () => {
 
   return (
     <>
-      <div className="mt-32 font-semibold text-6xl text-center">LATEST BLOG PAGE</div>
-      <div className="flex mt-8 px-40 justify-center gap-8">
+      <div className={`font-semibold text-6xl text-center ${isBlogDetailsPage ? 'mt-8' : 'mt-32'}`}>
+        {isBlogDetailsPage ? 'READ SIMILAR BLOGS' : 'LATEST BLOG PAGE'}
+      </div>
+      <div className={`flex mt-8 mx-auto w-[60%] justify-center gap-8 ${isBlogDetailsPage ? 'px-16' : 'px-40'}`}>
         {currentItems.map((blog) => (
           <div key={blog.id} className="p-4 rounded-lg">
             <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
