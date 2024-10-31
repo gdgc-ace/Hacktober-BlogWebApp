@@ -18,7 +18,7 @@ const getRandomColor = (): string => {
 
 const Tooltip: React.FC<TooltipProps> = ({ text, showTooltip }) => {
   const [position, setPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
-  const [bgColor, setBgColor] = useState<string>('#ffffff');
+  const [bgColor, setBgColor] = useState<string>('#fffff');
 
   // Track mouse movement
   useEffect(() => {
