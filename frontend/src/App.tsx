@@ -5,6 +5,7 @@ import BlogPage from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails"; 
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Profile from "./pages/Profile";
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
             <Route path="/blog/:id" element={<BlogDetails />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
       <Footer />

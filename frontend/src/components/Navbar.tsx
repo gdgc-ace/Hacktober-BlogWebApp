@@ -14,7 +14,7 @@ const Navbar = () => {
           </div>
           <div className="flex list-none items-center mx-16 text-2xl w-[30%] justify-around">
             <li>
-                <a href="">About</a>
+                <a href="" >About</a>
             </li>
             <li>
                 <a href="">Blog</a>
