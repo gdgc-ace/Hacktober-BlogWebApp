@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Signup = () => {
+    const [showPassword, setShowPassword] = useState(false);
+
     return (
         <div className="flex h-full items-center justify-center">
             <div className="relative flex items-center justify-center mt-32 bg-white shadow-lg p-8 rounded-lg max-w-md w-full">
@@ -26,11 +29,20 @@ const Signup = () => {
                             placeholder="Enter Email"
                             className="w-full px-4 py-4 border rounded-lg text-sm focus:outline-none focus:border-blue-400"
                         />
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            className="w-full px-4 py-4 border rounded-lg text-sm focus:outline-none focus:border-blue-400"
-                        />
+                        <div className="relative">
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                placeholder="Password"
+                                className="w-full px-4 py-4 border rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                            />
+                            <button
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}
+                                className="absolute inset-y-0 right-0 px-4 flex items-center text-gray-500 hover:text-gray-700"
+                            >
+                                {showPassword ? "Hide" : "Show"}
+                            </button>
+                        </div>
                         <button type="submit" className="w-full bg-blue-400 py-2 text-white rounded-lg font-medium hover:bg-blue-500">
                             Sign up
                         </button>
@@ -53,7 +65,7 @@ const Signup = () => {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Signup
+export default Signup;
