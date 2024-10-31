@@ -4,9 +4,10 @@
 How to run this project ?
 
 - For frontend :
-    1. ``` cd frontend```
-    2. ``` npm install```
-    3. ``` npm run dev```
+
+    1. Change the directory - ``` cd frontend```
+    2. Install the dependencies - ``` npm install```
+    3. Run the application - ``` npm run dev```
 
 - For backend : 
     1. ``` cd backend ```
